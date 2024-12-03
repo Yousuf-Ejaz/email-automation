@@ -2,7 +2,7 @@
   "scripts": {
     "start": "node dist/app.js",
     "dev": "concurrently \"npx nodemon --exec ts-node src/app.ts\" \"npm run start-frontend\"",
-    "start-frontend": "PORT=3001 cd src/client && npm start",
+    "start-frontend": "cross-env PORT=3001 cd frontend && npm start",
     "build": "npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,6 +24,7 @@
     "@types/express": "^5.0.0",
     "@types/jira-client": "^7.1.9",
     "@types/node": "^22.10.1",
-    "concurrently": "^9.1.0"
+    "concurrently": "^9.1.0",
+    "cross-env": "^7.0.3"
   }
 }
