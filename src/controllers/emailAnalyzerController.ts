@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { EmailAnalyzerService } from '../services/emailAnalyzerService';
+import { Email } from '../models/types';
 
 export class EmailAnalyzerController {
     private emailAnalyzerService: EmailAnalyzerService;
@@ -17,5 +18,9 @@ export class EmailAnalyzerController {
             console.error('Controller error:', error);
             res.status(500).json({ error: 'Internal server error' });
         }
+    }
+
+    public analyzeEmails = async (emails: Email[]) => {
+        return Promise.all(emails.map(email => this.emailAnalyzerService.analyzeAndProcess(email)));
     }
 } 

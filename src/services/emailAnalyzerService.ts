@@ -1,14 +1,20 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { Email, AnalysisResult } from '../models/types';
 import { config } from '../config/config';
+import { GoogleCalendarService } from './calendarService';
+import { JiraService } from './jiraService';
 
 export class EmailAnalyzerService {
     private genAI: GoogleGenerativeAI;
     private model: any;
+    private calendarService: GoogleCalendarService;
+    private jiraService: JiraService;
 
     constructor() {
         this.genAI = new GoogleGenerativeAI(config.geminiApiKey);
         this.model = this.genAI.getGenerativeModel({ model: "gemini-pro" });
+        this.calendarService = new GoogleCalendarService();
+        this.jiraService = new JiraService();
     }
 
     async analyzeEmail(email: Email): Promise<AnalysisResult> {
@@ -37,6 +43,20 @@ export class EmailAnalyzerService {
             console.error('Error analyzing email:', error);
             throw error;
         }
+    }
+
+    async analyzeAndProcess(email: Email): Promise<AnalysisResult> {
+        const analysis = await this.analyzeEmail(email);
+        
+        // Temporarily disable external service calls
+        // for (const calendarItem of analysis.calendarItems ?? []) {
+        //     await this.calendarService.createCalendarEvent(calendarItem);
+        // }
+        // for (const ticket of analysis.jiraTickets ?? []) {
+        //     await this.jiraService.createJiraTicket(ticket);
+        // }
+
+        return analysis;
     }
 
     private buildPrompt(email: Email): string {
