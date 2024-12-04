@@ -1,0 +1,104 @@
+Collated Results
+Calendar Items
+
+    Q2 Planning Meeting - next Tuesday at 2 PM EST (120 mins)
+    Priority: high
+    Attendees: dev.team@company.com
+    Security review meeting - Tomorrow at 10 AM EST ( mins)
+    Priority: high
+    Attendees: dev.team@company.com, security.team@company.com
+    Project Kickoff Meeting - 2023-03-08T10:00:00Z (60 mins)
+    Priority: high
+    Attendees: jane.smith@company.com, team@company.com
+
+JIRA Tickets
+
+    Mobile app login bug
+    Description:
+    Priority: high
+    Assignee: unassigned
+    New dashboard feature implementation
+    Description: - Due by April 15th - Requires analytics integration - Need monitoring setup
+    Priority: medium
+    Assignee: unassigned
+    Emergency patch for authentication service
+    Description: Urgent: Security vulnerability found in production.
+    Priority: high
+    Assignee: Unassigned
+    Update dependency versions
+    Description:
+    Priority: medium
+    Assignee: Unassigned
+
+Highlights
+
+    announcement: We're moving to a new CI/CD pipeline next month.
+    Priority: medium
+    announcement: Security vulnerability found in production.
+    Priority: high
+    decision: Emergency patch needed for authentication service
+    Priority: high
+    announcement: We are excited to announce the launch of our new product line next month.
+    Priority: high
+    announcement: Our team will be attending the Tech Conference 2024 in San Francisco.
+    Priority: medium
+    announcement: Don't forget to check out our blog for the latest industry insights.
+    Priority: medium
+
+Announcements
+
+    announcement: We're moving to a new CI/CD pipeline next month.
+    Priority: medium
+    announcement: Security vulnerability found in production.
+    Priority: high
+    announcement: We are excited to announce the launch of our new product line next month.
+    Priority: high
+    announcement: Our team will be attending the Tech Conference 2024 in San Francisco.
+    Priority: medium
+    announcement: Don't forget to check out our blog for the latest industry insights.
+    Priority: medium
+
+
+    Individual JSON per email item:
+    {
+  "emailId": "email123",
+  "calendarItems": [
+    {
+      "type": "meeting",
+      "title": "Q2 Planning Meeting",
+      "dateTime": "2023-03-28T14:00:00-05:00",
+      "duration": 120,
+      "priority": "high",
+      "attendees": [
+        "dev.team@company.com",
+        "tech.lead@company.com"
+      ]
+    }
+  ],
+  "jiraTickets": [
+    {
+      "type": "bug",
+      "title": "Critical Bug in Login Flow affecting Mobile Users",
+      "description": null,
+      "priority": "high",
+      "assignee": null,
+      "labels": []
+    },
+    {
+      "type": "task",
+      "title": "New Dashboard Feature",
+      "description": "- Must be completed by April 15th\n- Requires integration with the analytics API\n- Need to set up monitoring",
+      "priority": "medium",
+      "assignee": null,
+      "labels": []
+    }
+  ],
+  "highlights": [
+    {
+      "type": "announcement",
+      "content": "We're moving to a new CI/CD pipeline starting next month",
+      "priority": "high"
+    }
+  ]
+}
+
